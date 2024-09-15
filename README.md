@@ -1,2 +1,2 @@
 # YourPT
-YourPT is a personal Performance-Tracker
+YourPT is a web based personal Performance-Tracker

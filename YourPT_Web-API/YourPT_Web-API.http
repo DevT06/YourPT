@@ -1,0 +1,6 @@
+@YourPT_Web_API_HostAddress = http://localhost:5004
+
+GET {{YourPT_Web_API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

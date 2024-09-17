@@ -1,0 +1,41 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\DEV\\Projects\\YourPT\\YourPTWebClient\\YourPTWebClient\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\YourPTWebClient.bundle.scp.css",
+      "PackagePath": "staticwebassets\\YourPTWebClient.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\DEV\\Projects\\YourPT\\YourPTWebClient\\YourPTWebClient\\wwwroot\\app.css",
+      "PackagePath": "staticwebassets\\app.css"
+    },
+    {
+      "Id": "C:\\DEV\\Projects\\YourPT\\YourPTWebClient\\YourPTWebClient\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\DEV\\Projects\\YourPT\\YourPTWebClient\\YourPTWebClient\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\DEV\\Projects\\YourPT\\YourPTWebClient\\YourPTWebClient\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.YourPTWebClient.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.YourPTWebClient.props",
+      "PackagePath": "build\\YourPTWebClient.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.YourPTWebClient.props",
+      "PackagePath": "buildMultiTargeting\\YourPTWebClient.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.YourPTWebClient.props",
+      "PackagePath": "buildTransitive\\YourPTWebClient.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

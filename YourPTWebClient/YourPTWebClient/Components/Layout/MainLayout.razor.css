@@ -56,7 +56,12 @@ main {
         height: 100vh;
         position: sticky;
         top: 0;
+        transition: width 0.3s;
     }
+
+    /*.sidebar.collapsed {
+        width: 0;
+    }*/
 
     .top-row {
         position: sticky;

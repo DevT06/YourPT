@@ -56,7 +56,12 @@ main[b-16fck2bdd9] {
         height: 100vh;
         position: sticky;
         top: 0;
+        transition: width 0.3s;
     }
+
+    /*.sidebar.collapsed {
+        width: 0;
+    }*/
 
     .top-row[b-16fck2bdd9] {
         position: sticky;

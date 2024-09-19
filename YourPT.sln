@@ -11,9 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shared.Personal", "Shared\S
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shared.Community", "Shared\Shared.Community\Shared.Community.csproj", "{2D006C37-0036-4BFE-81FA-267508A8153E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YourPTWebClient", "YourPTWebClient\YourPTWebClient\YourPTWebClient.csproj", "{76D65C7C-58CB-4907-A77C-46FA9AFDF174}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YourPTWebClient", "YourPTWebClient\YourPTWebClient\YourPTWebClient.csproj", "{76D65C7C-58CB-4907-A77C-46FA9AFDF174}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YourPTWebClient.Client", "YourPTWebClient\YourPTWebClient.Client\YourPTWebClient.Client.csproj", "{D74F0DEA-BC65-450D-AEC7-4FB8A051EA00}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YourPTWebClient.Client", "YourPTWebClient\YourPTWebClient.Client\YourPTWebClient.Client.csproj", "{D74F0DEA-BC65-450D-AEC7-4FB8A051EA00}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

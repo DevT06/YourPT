@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("YourPTWebClient.Client")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+478ad29040be8b93b86c66e958f5a975487c7e29")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d52eaf90262c3ddb14011ac8c160f54aeb3c2a57")]
 [assembly: System.Reflection.AssemblyProductAttribute("YourPTWebClient.Client")]
 [assembly: System.Reflection.AssemblyTitleAttribute("YourPTWebClient.Client")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

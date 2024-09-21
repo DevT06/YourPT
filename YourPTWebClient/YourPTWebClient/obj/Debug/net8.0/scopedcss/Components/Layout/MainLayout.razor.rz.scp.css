@@ -10,6 +10,7 @@ main[b-16fck2bdd9] {
 
 .sidebar[b-16fck2bdd9] {
     background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);
+    transition: width 0.3s;
 }
 
 .top-row[b-16fck2bdd9] {
@@ -56,7 +57,7 @@ main[b-16fck2bdd9] {
         height: 100vh;
         position: sticky;
         top: 0;
-        transition: width 0.3s;
+        /*transition: width 0.3s;*/
     }
 
     /*.sidebar.collapsed {

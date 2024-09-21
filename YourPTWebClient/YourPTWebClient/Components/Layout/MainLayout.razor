@@ -8,7 +8,9 @@
     <main>
 	    <div class="top-row justify-content-between px-4">
 		    @* <MenuButton OnToggle="ToggleSidebar" /> *@
-			<button id="menuButton" onclick="toggleSideMenu()" class="btn btn-outline-primary" style="font-size: 22px; padding-left: 10px; padding-right: 10px; padding-top: 2px; padding-bottom: 2px;"><strong>☰</strong></button>
+			<button id="menuButton" onclick="toggleSideMenu()" class="btn btn-outline-primary" style="font-size: 22px; padding-left: 10px; padding-right: 10px; padding-top: 2px; padding-bottom: 2px;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-bar-left" viewBox="0 0 16 16">
+				<path fill-rule="evenodd" d="M12.5 15a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5M10 8a.5.5 0 0 1-.5.5H3.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L3.707 7.5H9.5a.5.5 0 0 1 .5.5"/>
+			</svg>@* <strong>☰</strong> *@</button>
 		    @* <MenuButton/> *@
 		    <a href="https://learn.microsoft.com/aspnet/core/" target="_blank">About</a>
 	    </div>
@@ -48,17 +50,19 @@
 		}
 	}
 
-	//not finished
+	//not finished (improve performance and more)
 	function updateMenuWidth() {
 		if (!hidden && window.innerWidth >= 641 && document.getElementById("sidebar").offsetWidth > 250) {
 			document.getElementById("sidebar").style.width = maxWidthSideBar();
 			document.getElementById("menuButton").style.visibility = 'visible';
-		} else if (window.innerWidth < 641 && (document.getElementById("sidebar").offsetWidth == 250 || document.getElementById("sidebar").offsetWidth == 0)) {
+			console.log("test")
+		} else if (window.innerWidth < 641 && document.getElementById("sidebar").offsetWidth != window.innerWidth/* (document.getElementById("sidebar").offsetWidth == 250 || document.getElementById("sidebar").offsetWidth == 0) */) {
 			if (hidden) {
 				hidden = false;
 			}
 			document.getElementById("sidebar").style.width = maxWidthSideBar();
 			document.getElementById("menuButton").style.visibility = 'hidden';
+			console.log("test")
 		}
 	}
 

@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YourPTWebAPI", "YourPTWebAP
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccess.EFCore", "DataAccess.EFCore\DataAccess.EFCore.csproj", "{33602706-007F-4C1D-94D2-700D71CAB8EC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shared.Personal", "Shared\Shared.Personal\Shared.Personal.csproj", "{48FA1A2E-E45B-489E-BC16-B4FD355B59C8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shared", "Shared\Shared\Shared.csproj", "{48FA1A2E-E45B-489E-BC16-B4FD355B59C8}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shared.Community", "Shared\Shared.Community\Shared.Community.csproj", "{2D006C37-0036-4BFE-81FA-267508A8153E}"
 EndProject

@@ -1,14 +1,15 @@
-﻿@inherits LayoutComponentBase
+﻿@using System.Runtime.InteropServices.JavaScript
+@inherits LayoutComponentBase
 
 <div class="page">
-	<div class="sidebar" id="sidebar">
-		<NavMenu/>
+	<div class="sidebar" id="sidebar" >
+		<NavMenu />
 	</div>
 
 	<main>
 		<div class="top-row justify-content-between px-4">
 			@* <MenuButton OnToggle="ToggleSidebar" /> *@
-			<button id="menuButton" onclick="toggleSideMenu()" class="btn btn-outline-primary" style="font-size: 22px; padding-left: 6px; padding-right: 6px; padding-top: 0; padding-bottom: 2px;">
+			<button id="menuButton" aria-hidden="True" onclick="toggleSideMenu()" class="btn btn-outline-primary" style="font-size: 22px; padding-left: 6px; padding-right: 6px; padding-top: 0; padding-bottom: 2px;">
 				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-arrow-bar-left" viewBox="0 0 16 16">
 					<path fill-rule="evenodd" d="M12.5 15a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5M10 8a.5.5 0 0 1-.5.5H3.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L3.707 7.5H9.5a.5.5 0 0 1 .5.5"/>
 				</svg>

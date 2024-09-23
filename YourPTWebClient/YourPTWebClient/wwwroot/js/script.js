@@ -36,24 +36,18 @@ function maxWidthSideBar() {
 
 //not finished (improve performance and more)
 function updateMenuWidth() {
-	//console.log("invoked")
-	// console.log("hidden: " + hidden)
-	// console.log("visible: " + visible)
-	if (!visible) {
-		document.getElementById("menuButton").style.visibility = 'hidden';
-	}
 	if (!visible && !hidden && window.innerWidth >= 641 /* && document.getElementById("sidebar").offsetWidth > 250 */) {
 		visible = true;
 		switchMenuButtonIcon();
 		document.getElementById("sidebar").style.width = maxWidthSideBar();
-		document.getElementById("menuButton").style.visibility = 'visible';
+		//document.getElementById("menuButton").style.visibility = 'visible';
 		console.log("test1")
 	} else if (visible && window.innerWidth < 641 /*&& document.getElementById("sidebar").offsetWidth != window.innerWidth */ /* (document.getElementById("sidebar").offsetWidth == 250 || document.getElementById("sidebar").offsetWidth == 0) */) {
 		hidden = false;
 		visible = false;
 		switchMenuButtonIcon();
 		document.getElementById("sidebar").style.width = maxWidthSideBar();
-		document.getElementById("menuButton").style.visibility = 'hidden';
+		//document.getElementById("menuButton").style.visibility = 'hidden';
 		console.log("test2")
 	}
 }

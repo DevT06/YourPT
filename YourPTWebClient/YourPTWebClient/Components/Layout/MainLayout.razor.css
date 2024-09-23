@@ -14,7 +14,7 @@ main {
 
 .sidebar {
     background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);
-    transition: width 0.4s;
+    transition: width 0.4s ease; /*other animation style: cubic-bezier(0.43, -0.1, 0.56, 1.1) ease = default(empty in this case)*/
     overflow-x: hidden;
     /*white-space: nowrap;
     box-sizing: border-box;*/

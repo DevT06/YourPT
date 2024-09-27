@@ -22,6 +22,6 @@ public class AssignmentConfiguration : IEntityTypeConfiguration<Assignment>
 
 		builder.HasOne(a => a.User).WithMany(u => u.Assignments).HasForeignKey(a => a.UserId).IsRequired(false);
 		builder.HasOne(a => a.Goal).WithMany(g => g.Assignments).HasForeignKey(a => a.GoalId).IsRequired(false);
-		builder.HasOne(a => a.Reflection).WithOne(r => r.Assignment).IsRequired(false);
+		builder.HasOne(a => a.Reflection).WithOne(r => r.Assignment).HasForeignKey<AssignmentReflection>(r => r.AssignmentId).IsRequired(false);
 	}
 }

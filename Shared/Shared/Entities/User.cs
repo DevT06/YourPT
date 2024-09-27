@@ -2,6 +2,8 @@
 
 public class User
 {
+	#region HashSet Variables
+
 	private ISet<Blog> _blogs = new HashSet<Blog>();
 
 	private ISet<Assignment> _assignments = new HashSet<Assignment>();
@@ -13,6 +15,8 @@ public class User
 	private ISet<AssignmentReflection> _assignmentReflections = new HashSet<AssignmentReflection>();
 
 	private ISet<Note> _notes = new HashSet<Note>();
+
+	#endregion
 
 	public int Id { get; set; }
 

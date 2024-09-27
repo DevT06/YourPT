@@ -1,4 +1,6 @@
 
+using DataAccess.EFCore;
+
 namespace YourPT_Web_API
 {
     public class Program
@@ -8,6 +10,9 @@ namespace YourPT_Web_API
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
+            builder.Services.AddDbContext<YourPTDbContext>();
+
+
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

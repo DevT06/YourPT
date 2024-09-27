@@ -4,7 +4,7 @@ using Shared.Entities;
 
 namespace DataAccess.EFCore.Configurations;
 
-public class GoalConfiguration
+public class GoalConfiguration : IEntityTypeConfiguration<Goal>
 {
 	public void Configure(EntityTypeBuilder<Goal> builder)
 	{

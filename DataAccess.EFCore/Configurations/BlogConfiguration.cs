@@ -5,7 +5,7 @@ using Shared.Entities;
 
 namespace DataAccess.EFCore.Configurations;
 
-public class BlogConfiguration
+public class BlogConfiguration : IEntityTypeConfiguration<Blog>
 {
 	public void Configure(EntityTypeBuilder<Blog> builder)
 	{

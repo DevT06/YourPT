@@ -4,7 +4,7 @@ using Shared.Entities;
 
 namespace DataAccess.EFCore.Configurations;
 
-public class NoteConfiguration
+public class NoteConfiguration : IEntityTypeConfiguration<Note>
 {
 	public void Configure(EntityTypeBuilder<Note> builder)
 	{

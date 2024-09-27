@@ -4,7 +4,7 @@ using Shared.Entities;
 
 namespace DataAccess.EFCore.Configurations;
 
-public class AssignmentReflectionConfiguration
+public class AssignmentReflectionConfiguration : IEntityTypeConfiguration<AssignmentReflection>
 {
 	public void Configure(EntityTypeBuilder<AssignmentReflection> builder)
 	{

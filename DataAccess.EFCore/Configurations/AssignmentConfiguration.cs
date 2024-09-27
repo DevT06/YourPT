@@ -4,7 +4,7 @@ using Shared.Entities;
 
 namespace DataAccess.EFCore.Configurations;
 
-public class AssignmentConfiguration
+public class AssignmentConfiguration : IEntityTypeConfiguration<Assignment>
 {
 	public void Configure(EntityTypeBuilder<Assignment> builder)
 	{

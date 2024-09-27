@@ -16,11 +16,11 @@ public class User
 
 	public int Id { get; set; }
 
-	public string UserName { get; set; }
+	public string Username { get; set; }
 
-	public string Firstname { get; set; }
+	public string? DisplayName { get; set; }
 
-	public string Lastname { get; set; }/* = string.Empty;*/
+	//age?
 
 	public string Email { get; set; }
 

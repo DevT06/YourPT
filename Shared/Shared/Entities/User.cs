@@ -1,6 +1,59 @@
-﻿namespace Shared.Personal.Entities;
+﻿namespace Shared.Entities;
 
 public class User
 {
-    
+	private ISet<Blog> _blogs = new HashSet<Blog>();
+
+	private ISet<Commission> _commissions = new HashSet<Commission>();
+
+	private ISet<Goal> _goals = new HashSet<Goal>();
+
+	private ISet<Reflection> _goalReflections = new HashSet<Reflection>();
+
+	private ISet<Note> _notes = new HashSet<Note>();
+
+	public int Id { get; set; }
+
+	public string UserName { get; set; }
+
+	public string Firstname { get; set; }
+
+	public string Lastname { get; set; }/* = string.Empty;*/
+
+	public string Email { get; set; }
+
+	public string Password { get; set; }
+
+	#region HashSet Relations
+
+	public ISet<Blog> Blogs
+	{
+		get => _blogs;
+		set => _blogs = value;
+	}
+
+	public ISet<Commission> Commissions
+	{
+		get => _commissions;
+		set => _commissions = value;
+	}
+
+	public ISet<Goal> Goals
+	{
+		get => _goals;
+		set => _goals = value;
+	}
+
+	public ISet<Reflection> GoalReflections
+	{
+		get => _goalReflections;
+		set => _goalReflections = value;
+	}
+
+	public ISet<Note> Notes
+	{
+		get => _notes; 
+		set => _notes = value;
+	}
+	#endregion
 }

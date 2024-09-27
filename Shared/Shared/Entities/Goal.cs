@@ -17,11 +17,17 @@ public class Goal
 	public bool Complete { get; set; }
 	//later add completion in percentages based on completion of assignments
 
+	#region Implement later
+
+	//public int CompletionRate { get; set; }
+	//public bool Public { get; set; }
+
+	#endregion
+
 	public GoalReflection Reflection { get; set; } 
 
 	// change later to reflection and combine commissionReflection | maybe later change to multiple
 
-	//Commissions
 
 	public List<Assignment> Assignments { get; set; }
 

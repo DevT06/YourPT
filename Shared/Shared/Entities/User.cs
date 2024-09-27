@@ -8,7 +8,9 @@ public class User
 
 	private ISet<Goal> _goals = new HashSet<Goal>();
 
-	private ISet<Reflection> _goalReflections = new HashSet<Reflection>();
+	private ISet<GoalReflection> _goalReflections = new HashSet<GoalReflection>();
+
+	private ISet<AssignmentReflection> _assignmentReflections = new HashSet<AssignmentReflection>();
 
 	private ISet<Note> _notes = new HashSet<Note>();
 
@@ -44,10 +46,16 @@ public class User
 		set => _goals = value;
 	}
 
-	public ISet<Reflection> GoalReflections
+	public ISet<GoalReflection> GoalReflections
 	{
 		get => _goalReflections;
 		set => _goalReflections = value;
+	}
+
+	public ISet<AssignmentReflection> AssignmentReflections
+	{
+		get => _assignmentReflections;
+		set => _assignmentReflections = value;
 	}
 
 	public ISet<Note> Notes

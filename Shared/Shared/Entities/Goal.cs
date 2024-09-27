@@ -16,7 +16,7 @@ public class Goal
 
 	public bool Complete { get; set; }
 
-	public Reflection Reflection { get; set; } 
+	public GoalReflection Reflection { get; set; } 
 
 	// change later to reflection and combine commissionReflection | maybe later change to multiple
 

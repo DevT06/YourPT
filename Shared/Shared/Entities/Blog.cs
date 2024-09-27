@@ -17,7 +17,6 @@ public class Blog
 	//comments?
 
 	public User User { get; set; } // multiple?
-
 	//FK make not nullable nullable?
 	public int? UserId { get; set; }
 }

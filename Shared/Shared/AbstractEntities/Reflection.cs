@@ -1,6 +1,8 @@
-﻿namespace Shared.Entities;
+﻿using Shared.Entities;
 
-public class Reflection
+namespace Shared.AbstractEntities;
+
+public abstract class Reflection
 {
 	// maybe combine both reflection types
 	public int Id { get; set; }
@@ -14,8 +16,6 @@ public class Reflection
 	public DateTime CreatedAt { get; set; }
 
 	public DateTime? UpdatedAt { get; set; }
-
-	public Assignment Assignment { get; set; }
 
 	public User User { get; set; }
 }

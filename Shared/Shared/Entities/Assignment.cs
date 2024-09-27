@@ -16,9 +16,13 @@ public class Assignment
 
 	public bool Complete { get; set; }
 
-	public Reflection Reflection { get; set; }  // maybe change to multiple
+	public AssignmentReflection? Reflection { get; set; }  // maybe change to multiple
 
 	public Goal Goal { get; set; }
+	//FK
+	public int? GoalId { get; set; }
 
 	public User User { get; set; }
+	//FK
+	public int? UserId {get; set; }
 }

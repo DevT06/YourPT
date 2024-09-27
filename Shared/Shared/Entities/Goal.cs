@@ -15,6 +15,7 @@ public class Goal
 	public DateTime? UpdatedAt { get; set; }
 
 	public bool Complete { get; set; }
+	//later add completion in percentages based on completion of assignments
 
 	public GoalReflection Reflection { get; set; } 
 
@@ -27,6 +28,8 @@ public class Goal
 	//completion
 
 	public User User { get; set; } //change later to multiple
+	//FK
+	public int? UserId { get; set; }
 
 	//maybe override Equals and GetHashcode Methods (performance)
 

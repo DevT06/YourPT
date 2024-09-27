@@ -15,6 +15,6 @@ public class Note
 	public DateTime? UpdatedAt { get; set; }
 
 	public User User { get; set; }
-
-
+	//FK
+	public int? UserId { get; set; }
 }

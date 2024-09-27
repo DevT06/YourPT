@@ -1,6 +1,6 @@
 ﻿namespace Shared.Entities;
 
-public class Commission
+public class Assignment
 {
 	public int Id { get; set; }
 

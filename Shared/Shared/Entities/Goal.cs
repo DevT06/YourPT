@@ -22,7 +22,7 @@ public class Goal
 
 	//Commissions
 
-	public List<Commission> Commissions { get; set; }
+	public List<Assignment> Assignments { get; set; }
 
 	//completion
 
@@ -32,6 +32,6 @@ public class Goal
 
 	public Goal()
 	{
-		Commissions = new List<Commission>();
+		Assignments = new List<Assignment>();
 	}
 }

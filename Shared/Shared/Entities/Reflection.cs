@@ -15,7 +15,7 @@ public class Reflection
 
 	public DateTime? UpdatedAt { get; set; }
 
-	public Commission Commission { get; set; }
+	public Assignment Assignment { get; set; }
 
 	public User User { get; set; }
 }

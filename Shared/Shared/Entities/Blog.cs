@@ -8,7 +8,7 @@ public class Blog
 
 	public string Title { get; set; }
 
-	public string Text { get; set; }
+	public string Content { get; set; } // was Text
 
 	public DateTime CreatedAt { get; set; }
 
@@ -17,4 +17,7 @@ public class Blog
 	//comments?
 
 	public User User { get; set; } // multiple?
+
+	//FK make not nullable nullable?
+	public int? UserId { get; set; }
 }

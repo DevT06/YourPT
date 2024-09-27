@@ -4,7 +4,7 @@ public class User
 {
 	private ISet<Blog> _blogs = new HashSet<Blog>();
 
-	private ISet<Commission> _commissions = new HashSet<Commission>();
+	private ISet<Assignment> _assignments = new HashSet<Assignment>();
 
 	private ISet<Goal> _goals = new HashSet<Goal>();
 
@@ -32,10 +32,10 @@ public class User
 		set => _blogs = value;
 	}
 
-	public ISet<Commission> Commissions
+	public ISet<Assignment> Assignments
 	{
-		get => _commissions;
-		set => _commissions = value;
+		get => _assignments;
+		set => _assignments = value;
 	}
 
 	public ISet<Goal> Goals

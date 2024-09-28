@@ -9,6 +9,7 @@
   <ItemGroup>
     <Folder Include="DTOs\" />
     <Folder Include="Interfaces\" />
+    <Folder Include="IRepositories\" />
     <Folder Include="IServices\" />
     <Folder Include="Services\" />
   </ItemGroup>

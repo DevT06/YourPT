@@ -5,6 +5,7 @@ public class Blog
 	public int Id { get; set; }
 
 	//later add Public / private boolean
+	//later category or some sort of hashtag (not only for blog)
 
 	public string Title { get; set; }
 

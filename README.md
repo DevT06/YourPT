@@ -23,5 +23,5 @@ To be continued...
 ## Installation and Setup
 To be determined...
 
-## Delvelopment State
+## Development State
 YourPT is currently in a very early developmental stage. <br>

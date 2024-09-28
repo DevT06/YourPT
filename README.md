@@ -2,7 +2,7 @@
 ###
 
 ## About
-YourPT (Your Personal Tracker) is a web based personal Performance-Tracker.
+YourPT (Your Performance Tracker) is a web based personal Performance-Tracker.
 
 ## Technologies Used
 ### Frontend

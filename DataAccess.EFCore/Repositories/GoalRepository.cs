@@ -70,7 +70,7 @@ public class GoalRepository : IGoalRepository
 		//}
 
 
-		//Todo improve efficiency
+		//Todo improve efficiency down below at the AttachRange
 		_context.Assignments.AttachRange(goal.Assignments);
 
 		_context.Goals.Update(goal);

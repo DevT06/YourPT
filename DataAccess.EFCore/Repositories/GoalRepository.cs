@@ -1,5 +1,7 @@
-﻿using Shared.Entities;
+﻿using Microsoft.EntityFrameworkCore;
+using Shared.Entities;
 using Shared.IRepositories;
+using System.Reflection.Metadata;
 
 namespace DataAccess.EFCore.Repositories;
 
@@ -13,38 +15,80 @@ public class GoalRepository : IGoalRepository
 	}
 
 
-	public Goal? GetById(int id)
+	public async Task<Goal?> GetByIdAsync(int id)
 	{
-		throw new NotImplementedException();
+		return await _context.Goals
+			.FindAsync(id);
 	}
 
-	public List<Goal> GetByIds(IEnumerable<int> ids)
+	public async Task<List<Goal>> GetByIdsAsync(IEnumerable<int> ids)
 	{
-		throw new NotImplementedException();
+		return await _context.Goals
+			.Where(b => ids.Contains(b.Id))
+			.ToListAsync();
 	}
 
-	public List<Goal> GetAll()
+	public async Task<List<Goal>> GetAllAsync()
 	{
-		throw new NotImplementedException();
+		return await _context.Goals
+			.ToListAsync();
 	}
 
-	public Goal Add(Goal goal)
+	public async Task<Goal> AddAsync(Goal goal)
 	{
-		throw new NotImplementedException();
+		_context.Users.Attach(goal.User);
+
+		if (goal.Assignments.Count > 0)
+		{
+			_context.Assignments.AttachRange(goal.Assignments);
+		}
+
+		_context.GoalReflections.Attach(goal.Reflection);
+		_context.Goals.Add(goal);
+		await _context.SaveChangesAsync();
+		return goal;
 	}
 
-	public Goal Update(Goal goal)
+	public async Task<Goal> UpdateAsync(Goal goal)
 	{
-		throw new NotImplementedException();
+		// not necessary because cannot be changed? remove later
+		// Check if the Assignment entity is already tracked by the context
+		if (_context.GoalReflections.Local.All(a => a.Id != goal.Reflection.Id))
+		{
+			_context.GoalReflections.Attach(goal.Reflection);
+		}
+
+		// Check if the User entity is already tracked by the context
+		if (_context.Users.Local.All(u => u.Id != goal.User.Id))
+		{
+			_context.Users.Attach(goal.User);
+		}
+
+		//if (_context.Assignments.Local.All(u => u.Id != assignment.Goal.Id)) //GoalId works to?
+		//{
+		//	_context.Goals.Attach(assignment.Goal);
+		//}
+
+
+		//Todo improve efficiency
+		_context.Assignments.AttachRange(goal.Assignments);
+
+		_context.Goals.Update(goal);
+		await _context.SaveChangesAsync();
+
+		return goal;
 	}
 
-	public void DeleteById(int id)
+	public async void DeleteByIdAsync(int id)
 	{
-		throw new NotImplementedException();
-	}
+		var existingGoal = GetByIdAsync(id);
 
-	public bool Exists(int id)
-	{
-		throw new NotImplementedException();
+		//replaces exists method
+		if (existingGoal == null) return;
+
+		//Todo also remove the attached Assignments and the belonging AssignmentReflections
+
+		_context.Goals.Remove(await existingGoal);
+		await _context.SaveChangesAsync();
 	}
 }

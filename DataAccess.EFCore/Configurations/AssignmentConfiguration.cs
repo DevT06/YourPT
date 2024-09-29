@@ -21,7 +21,7 @@ public class AssignmentConfiguration : IEntityTypeConfiguration<Assignment>
 		builder.Property(a => a.UpdatedAt).HasColumnName("UpdatedAt").IsRequired(false);
 
 		builder.HasOne(a => a.User).WithMany(u => u.Assignments).HasForeignKey(a => a.UserId).IsRequired(false);
-		builder.HasOne(a => a.Goal).WithMany(g => g.Assignments).HasForeignKey(a => a.GoalId).IsRequired(false);
+		builder.HasOne(a => a.Goal).WithMany(g => g.Assignments).HasForeignKey(a => a.GoalId).IsRequired(false); // TODO ADJUST FKs!!! for all ?
 		builder.HasOne(a => a.Reflection).WithOne(r => r.Assignment).HasForeignKey<AssignmentReflection>(r => r.AssignmentId).IsRequired(false);
 	}
 }

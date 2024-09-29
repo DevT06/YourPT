@@ -2,7 +2,7 @@
 
 public class User
 {
-	#region HashSet Variables
+	#region Private Variables
 
 	private ISet<Blog> _blogs = new HashSet<Blog>();
 
@@ -30,7 +30,7 @@ public class User
 
 	public string Password { get; set; }
 
-	#region HashSet Relations
+	#region Relations
 
 	public ISet<Blog> Blogs
 	{

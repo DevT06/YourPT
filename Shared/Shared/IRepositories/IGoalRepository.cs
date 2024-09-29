@@ -4,19 +4,19 @@ namespace Shared.IRepositories;
 
 public interface IGoalRepository
 {
-	Goal? GetById(int id);
+	Task<Goal?> GetByIdAsync(int id);
 
 	// search with owner id
 
-	List<Goal> GetByIds(IEnumerable<int>  ids);
+	Task<List<Goal>> GetByIdsAsync(IEnumerable<int>  ids);
 
-	List<Goal> GetAll();
+	Task<List<Goal>> GetAllAsync();
 
-	Goal Add(Goal goal);
+	Task<Goal> AddAsync(Goal goal);
 
-	Goal Update(Goal goal);
+	Task<Goal> UpdateAsync(Goal goal);
 
-	void DeleteById(int id);
+	void DeleteByIdAsync(int id);
 
-	bool Exists(int id);
+	// bool Exists(int id); ?
 }

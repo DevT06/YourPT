@@ -24,7 +24,7 @@ public class AssignmentRepository : IAssignmentRepository
 	public async Task<List<Assignment>> GetByIdsAsync(IEnumerable<int> ids)
 	{
 		return await _context.Assignments
-			.Where(m => ids.Contains(m.Id))
+			.Where(a => ids.Contains(a.Id))
 			.ToListAsync();
 	}
 

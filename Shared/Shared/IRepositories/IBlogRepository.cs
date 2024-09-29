@@ -4,19 +4,18 @@ namespace Shared.IRepositories;
 
 public interface IBlogRepository
 {
-	Blog? GetById(int id);
+	Task<Blog?> GetByIdAsync(int id);
 
-	List<Blog> GetAll();
+	Task<List<Blog>> GetAllAsync();
 
-	List<Blog> GetByIds(IEnumerable<int> ids);
+	Task<List<Blog>> GetByIdsAsync(IEnumerable<int> ids);
 
 	//List<Blog> GetBySearch(int? categoryId, string searchTerm);
 
-	Blog Add(Blog blog);
+	Task<Blog> AddAsync(Blog blog);
 
-	Blog Update(Blog blog);
+	Task<Blog> UpdateAsync(Blog blog);
 
-	void DeleteById(int id);
+	void DeleteByIdAsync(int id);
 
-	bool Exists(int id);
 }

@@ -1,4 +1,5 @@
-﻿using Shared.Entities;
+﻿using Microsoft.EntityFrameworkCore;
+using Shared.Entities;
 using Shared.IRepositories;
 
 namespace DataAccess.EFCore.Repositories;
@@ -13,38 +14,57 @@ public class BlogRepository : IBlogRepository
 	}
 
 
-	public Blog? GetById(int id)
+	public async Task<Blog?> GetByIdAsync(int id)
 	{
-		throw new NotImplementedException();
+		return await _context.Blogs
+			.FindAsync(id);
 	}
 
-	public List<Blog> GetAll()
+	public async Task<List<Blog>> GetAllAsync()
 	{
-		throw new NotImplementedException();
+		return await _context.Blogs
+			.ToListAsync();
 	}
 
-	public List<Blog> GetByIds(IEnumerable<int> ids)
+	public async Task<List<Blog>> GetByIdsAsync(IEnumerable<int> ids)
 	{
-		throw new NotImplementedException();
+		return await _context.Blogs
+			.Where(b => ids.Contains(b.Id))
+			.ToListAsync();
 	}
 
-	public Blog Add(Blog blog)
+	public async Task<Blog> AddAsync(Blog blog)
 	{
-		throw new NotImplementedException();
+		_context.Users.Attach(blog.User);
+
+		_context.Blogs.Add(blog);
+		await _context.SaveChangesAsync();
+		return blog;
 	}
 
-	public Blog Update(Blog blog)
+	public async Task<Blog> UpdateAsync(Blog blog)
 	{
-		throw new NotImplementedException();
+		// not necessary because cannot be changed? remove later
+		// Check if the User entity is already tracked by the context
+		if (_context.Users.Local.All(u => u.Id != blog.User.Id))
+		{
+			_context.Users.Attach(blog.User);
+		}
+
+		_context.Blogs.Update(blog);
+		await _context.SaveChangesAsync();
+
+		return blog;
 	}
 
-	public void DeleteById(int id)
+	public async void DeleteByIdAsync(int id)
 	{
-		throw new NotImplementedException();
-	}
+		var existingBlog = GetByIdAsync(id);
 
-	public bool Exists(int id)
-	{
-		throw new NotImplementedException();
+		//replaces exists method
+		if (existingBlog == null) return;
+
+		_context.Blogs.Remove(await existingBlog);
+		await _context.SaveChangesAsync();
 	}
 }

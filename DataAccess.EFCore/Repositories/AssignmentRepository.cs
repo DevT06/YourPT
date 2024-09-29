@@ -1,4 +1,6 @@
-﻿using Shared.Entities;
+﻿using Microsoft.EntityFrameworkCore;
+using Shared.AbstractEntities;
+using Shared.Entities;
 using Shared.IRepositories;
 
 namespace DataAccess.EFCore.Repositories;
@@ -13,33 +15,75 @@ public class AssignmentRepository : IAssignmentRepository
 	}
 
 
-	public Assignment? GetById(int id)
+	public async Task<Assignment?> GetByIdAsync(int id)
 	{
-		throw new NotImplementedException();
+		return await _context.Assignments
+			.FindAsync(id);
 	}
 
-	public List<Assignment> GetByIds(IEnumerable<int> ids)
+	public async Task<List<Assignment>> GetByIdsAsync(IEnumerable<int> ids)
 	{
-		throw new NotImplementedException();
+		return await _context.Assignments
+			.Where(m => ids.Contains(m.Id))
+			.ToListAsync();
 	}
 
-	public List<Assignment> GetAll()
+	public async Task<List<Assignment>> GetAllAsync()
 	{
-		throw new NotImplementedException();
+		return await _context.Assignments
+			.ToListAsync();
 	}
 
-	public Assignment Add(Assignment assignment)
+	public async Task<Assignment> AddAsync(Assignment assignment)
 	{
-		throw new NotImplementedException();
+		//?
+		if (assignment.Reflection != null)
+		{
+			_context.AssignmentReflections.Attach(assignment.Reflection);
+		}
+
+		_context.Goals.Attach(assignment.Goal);
+		_context.Users.Attach(assignment.User);
+
+		_context.Assignments.Add(assignment);
+		await _context.SaveChangesAsync();
+		return assignment;
 	}
 
-	public Assignment Update(Assignment assignment)
+	public async Task<Assignment> UpdateAsync(Assignment assignment)
 	{
-		throw new NotImplementedException();
+		// not necessary because cannot be changed? remove later
+		// Check if the Assignment entity is already tracked by the context
+		if (_context.AssignmentReflections.Local.All(a => a.Id != assignment.Reflection.Id))
+		{
+			_context.AssignmentReflections.Attach(assignment.Reflection);
+		}
+
+		// Check if the User entity is already tracked by the context
+		if (_context.Users.Local.All(u => u.Id != assignment.User.Id))
+		{
+			_context.Users.Attach(assignment.User);
+		}
+
+		if (_context.Goals.Local.All(u => u.Id != assignment.Goal.Id)) //GoalId works to?
+		{
+			_context.Goals.Attach(assignment.Goal);
+		}
+
+		_context.Assignments.Update(assignment);
+		await _context.SaveChangesAsync();
+
+		return assignment;
 	}
 
-	public Assignment DeleteById(int id)
+	public async void DeleteByIdAsync(int id)
 	{
-		throw new NotImplementedException();
+		var existingAssignment = GetByIdAsync(id);
+
+		//replaces exists method
+		if (existingAssignment == null) return;
+
+		_context.Assignments.Remove(await existingAssignment);
+		await _context.SaveChangesAsync();
 	}
 }

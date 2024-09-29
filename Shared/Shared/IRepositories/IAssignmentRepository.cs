@@ -4,17 +4,17 @@ namespace Shared.IRepositories;
 
 public interface IAssignmentRepository
 {
-	Assignment? GetById(int id);
+	Task<Assignment?> GetByIdAsync(int id);
 
-	List<Assignment> GetByIds(IEnumerable<int> ids);
+	Task<List<Assignment>> GetByIdsAsync(IEnumerable<int> ids);
 
-	List<Assignment> GetAll();
+	Task<List<Assignment>> GetAllAsync();
 
 	// search
 
-	Assignment Add(Assignment assignment);
+	Task<Assignment> AddAsync(Assignment assignment);
 
-	Assignment Update(Assignment assignment);
+	Task<Assignment> UpdateAsync(Assignment assignment);
 
-	Assignment DeleteById(int id);
+	void DeleteByIdAsync(int id);
 }

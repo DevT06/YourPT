@@ -6,7 +6,7 @@ public interface IGoalRepository
 {
 	Goal? GetById(int id);
 
-	// search
+	// search with owner id
 
 	List<Goal> GetByIds(IEnumerable<int>  ids);
 

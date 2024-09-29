@@ -4,15 +4,13 @@ namespace Shared.IRepositories;
 
 public interface IGoalReflectionRepository
 {
-	GoalReflection? GetById(int id);
+	Task<GoalReflection?> GetByIdAsync(int id);
 
-	List<GoalReflection> GetAll();
+	Task<List<GoalReflection>> GetAllAsync();
 
-	GoalReflection Add(GoalReflection goalReflection);
+	Task<GoalReflection> AddAsync(GoalReflection reflection);
 
-	GoalReflection Update(GoalReflection goalReflection);
+	Task<GoalReflection> UpdateAsync(GoalReflection reflection);
 
-	void DeleteById(int id);
-
-	bool Exists(int id);
+	void DeleteByIdAsync(int id);
 }

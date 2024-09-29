@@ -15,7 +15,7 @@ public class YourPTDbContext : DbContext
     public DbSet<AssignmentReflection> AssignmentReflections { get; set; }
     public DbSet<Blog> Blogs { get; set; }
     public DbSet<Goal> Goals { get; set; }
-    public DbSet<GoalReflection> GoalsReflections { get; set; }
+    public DbSet<GoalReflection> GoalReflections { get; set; }
     public DbSet<Note> Notes { get; set; }
     public DbSet<User> Users { get; set; }
 

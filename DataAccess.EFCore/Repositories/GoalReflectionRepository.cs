@@ -1,4 +1,6 @@
-﻿using Shared.Entities;
+﻿using Microsoft.EntityFrameworkCore;
+using Shared.AbstractEntities;
+using Shared.Entities;
 using Shared.IRepositories;
 
 namespace DataAccess.EFCore.Repositories;
@@ -13,33 +15,58 @@ public class GoalReflectionRepository : IGoalReflectionRepository
 	}
 
 
-	public GoalReflection? GetById(int id)
+	public async Task<GoalReflection?> GetByIdAsync(int id)
 	{
-		throw new NotImplementedException();
+		return await _context.GoalReflections
+			.FindAsync(id);
 	}
 
-	public List<GoalReflection> GetAll()
+	public async Task<List<GoalReflection>> GetAllAsync()
 	{
-		throw new NotImplementedException();
+		return await _context.GoalReflections
+			.ToListAsync();
 	}
 
-	public GoalReflection Add(GoalReflection goalReflection)
+	public async Task<GoalReflection> AddAsync(GoalReflection reflection)
 	{
-		throw new NotImplementedException();
+		//?
+		_context.Goals.Attach(reflection.Goal);
+		_context.Users.Attach(reflection.User);
+
+		_context.GoalReflections.Add(reflection);
+		await _context.SaveChangesAsync();
+		return reflection;
 	}
 
-	public GoalReflection Update(GoalReflection goalReflection)
+	public async Task<GoalReflection> UpdateAsync(GoalReflection reflection)
 	{
-		throw new NotImplementedException();
+		// not necessary because cannot be changed? remove later
+		// Check if the Assignment entity is already tracked by the context
+		if (_context.Goals.Local.All(a => a.Id != reflection.Goal.Id))
+		{
+			_context.Goals.Attach(reflection.Goal);
+		}
+
+		// Check if the User entity is already tracked by the context
+		if (_context.Users.Local.All(u => u.Id != reflection.User.Id))
+		{
+			_context.Users.Attach(reflection.User);
+		}
+
+		_context.GoalReflections.Update(reflection);
+		await _context.SaveChangesAsync();
+
+		return reflection;
 	}
 
-	public void DeleteById(int id)
+	public async void DeleteByIdAsync(int id)
 	{
-		throw new NotImplementedException();
-	}
+		var existingReflection = GetByIdAsync(id);
 
-	public bool Exists(int id)
-	{
-		throw new NotImplementedException();
+		//replaces exists method
+		if (existingReflection == null) return;
+
+		_context.GoalReflections.Remove(await existingReflection);
+		await _context.SaveChangesAsync();
 	}
 }

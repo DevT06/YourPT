@@ -4,6 +4,17 @@ namespace Shared.IRepositories;
 
 public interface IAssignmentReflectionRepository
 {
+	Task<AssignmentReflection?> GetByIdAsync(int id);
+
+	Task<List<AssignmentReflection>> GetAllAsync();
+
+	Task<AssignmentReflection> AddAsync(AssignmentReflection reflection);
+
+	Task<AssignmentReflection> UpdateAsync(AssignmentReflection reflection);
+
+	void DeleteByIdAsync(int id);
+
+	#region Non Async Methods
 	AssignmentReflection? GetById(int id);
 
 	// NOT NEEDED ||
@@ -19,4 +30,6 @@ public interface IAssignmentReflectionRepository
 	void DeleteById(int id);
 
 	bool Exists(int id);
+
+#endregion
 }

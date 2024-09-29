@@ -1,4 +1,5 @@
-﻿using Shared.Entities;
+﻿using Microsoft.EntityFrameworkCore;
+using Shared.Entities;
 using Shared.IRepositories;
 
 namespace DataAccess.EFCore.Repositories;
@@ -12,20 +13,84 @@ public class AssignmentReflectionRepository : IAssignmentReflectionRepository
 		_context = context;
 	}
 
+	public async Task<AssignmentReflection?> GetByIdAsync(int id)
+	{
+		return await _context.AssignmentReflections
+			.FindAsync(id);
+	}
+
+	public async Task<List<AssignmentReflection>> GetAllAsync()
+	{
+		return await _context.AssignmentReflections
+			.ToListAsync();
+	}
+
+	public async Task<AssignmentReflection> AddAsync(AssignmentReflection reflection)
+	{
+		//?
+		_context.Assignments.Attach(reflection.Assignment);
+		_context.Users.Attach(reflection.User);
+
+		_context.AssignmentReflections.Add(reflection);
+		await _context.SaveChangesAsync();
+		return reflection;
+	}
+
+	public async Task<AssignmentReflection> UpdateAsync(AssignmentReflection reflection)
+	{
+		// not necessary because cannot be changed? remove later
+		// Check if the Assignment entity is already tracked by the context
+		if (_context.Assignments.Local.All(a => a.Id != reflection.Assignment.Id))
+		{
+			_context.Assignments.Attach(reflection.Assignment);
+		}
+
+		// Check if the User entity is already tracked by the context
+		if (_context.Users.Local.All(u => u.Id != reflection.User.Id))
+		{
+			_context.Users.Attach(reflection.User);
+		}
+
+		_context.AssignmentReflections.Update(reflection);
+		await _context.SaveChangesAsync();
+
+		return reflection;
+	}
+
+	public async void DeleteByIdAsync(int id)
+	{
+		var existingReflection = GetByIdAsync(id);
+
+		//replaces exists method
+		if (existingReflection == null) return;
+
+		_context.AssignmentReflections.Remove(await existingReflection);
+		await _context.SaveChangesAsync();
+	}
+
+
+	#region Non Async Methods DONT USE IN PRODUCTION!
 
 	public AssignmentReflection? GetById(int id)
 	{
-		throw new NotImplementedException();
+		return _context.AssignmentReflections
+			.Find(id);
 	}
 
 	public List<AssignmentReflection> GetAll()
 	{
-		throw new NotImplementedException();
+		return _context.AssignmentReflections
+			.ToList();
 	}
 
 	public AssignmentReflection Add(AssignmentReflection reflection)
 	{
-		throw new NotImplementedException();
+		_context.Assignments.Attach(reflection.Assignment);
+		_context.Users.Attach(reflection.User);
+
+		_context.AssignmentReflections.Add(reflection);
+		_context.SaveChanges();
+		return reflection;
 	}
 
 	public AssignmentReflection Update(AssignmentReflection reflection)
@@ -42,4 +107,6 @@ public class AssignmentReflectionRepository : IAssignmentReflectionRepository
 	{
 		throw new NotImplementedException();
 	}
+
+	#endregion
 }

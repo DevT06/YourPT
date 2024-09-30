@@ -1,7 +1,7 @@
 
 using DataAccess.EFCore;
 
-namespace YourPT_Web_API
+namespace YourPTWebAPI
 {
     public class Program
     {

@@ -1,6 +1,6 @@
 ﻿using Shared.Entities;
 
-namespace Shared.IRepositories;
+namespace Shared.Interfaces.IRepositories;
 
 public interface IBlogRepository
 {

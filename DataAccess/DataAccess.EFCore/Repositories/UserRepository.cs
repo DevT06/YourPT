@@ -1,39 +1,39 @@
 ﻿using Shared.Entities;
-using Shared.IRepositories;
+using Shared.Interfaces.IRepositories;
 
 namespace DataAccess.EFCore.Repositories;
 
-public class NoteRepository : INoteRepository
+public class UserRepository : IUserRepository
 {
 	private readonly YourPTDbContext _context;
 
-	public NoteRepository(YourPTDbContext context)
+	public UserRepository(YourPTDbContext context)
 	{
 		_context = context;
 	}
 
 
-	public Note? GetById(int id)
+	public User? GetById(int id)
 	{
 		throw new NotImplementedException();
 	}
 
-	public List<Note> GetByIds(IEnumerable<int> ids)
+	public List<User> GetAll()
 	{
 		throw new NotImplementedException();
 	}
 
-	public List<Note> GetAll()
+	public List<User> GetByIds(IEnumerable<int> ids)
 	{
 		throw new NotImplementedException();
 	}
 
-	public Note Add(Note note)
+	public User Add(User user)
 	{
 		throw new NotImplementedException();
 	}
 
-	public Note Update(Note note)
+	public User Update(User user)
 	{
 		throw new NotImplementedException();
 	}

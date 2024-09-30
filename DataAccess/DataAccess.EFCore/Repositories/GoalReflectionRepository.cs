@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Shared.AbstractEntities;
 using Shared.Entities;
-using Shared.IRepositories;
+using Shared.Interfaces.IRepositories;
 
 namespace DataAccess.EFCore.Repositories;
 

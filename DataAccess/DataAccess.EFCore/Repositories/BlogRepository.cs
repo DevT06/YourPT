@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Shared.Entities;
-using Shared.IRepositories;
+using Shared.Interfaces.IRepositories;
 
 namespace DataAccess.EFCore.Repositories;
 

@@ -25,3 +25,12 @@ To be determined...
 
 ## Development State
 YourPT is currently in a very early developmental state. <br>
+
+
+<br>
+
+
+## License
+This project is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License. For commercial use, please contact [Your Contact Information].
+
+[License: CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)

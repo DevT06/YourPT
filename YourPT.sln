@@ -15,7 +15,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YourPTWebClient", "WebClien
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YourPTWebClient.Client", "WebClient\YourPTWebClient.Client\YourPTWebClient.Client.csproj", "{D74F0DEA-BC65-450D-AEC7-4FB8A051EA00}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4_application_webapis", "4_application_webapis", "{F6E63C9F-D1A5-4FBF-B1DF-90D8946C9C80}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4_applicationWebAPIs", "4_applicationWebAPIs", "{F6E63C9F-D1A5-4FBF-B1DF-90D8946C9C80}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0_dataAccess", "0_dataAccess", "{1D28B9AA-90B6-45F6-8135-7D4CDE34C318}"
 EndProject
@@ -29,9 +29,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3_logic", "3_logic", "{887F
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logic.Core", "Logic\Logic.Core\Logic.Core.csproj", "{789B8FA7-278E-41CE-A9A7-F089D1067AA1}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5_application_client", "5_application_client", "{1B01B665-72FB-4923-BE08-E944E60B9DAC}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5_applicationClient", "5_applicationClient", "{1B01B665-72FB-4923-BE08-E944E60B9DAC}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NewFolder1", "NewFolder1", "{6F10A985-4C52-4C50-9FEC-10F2AE6646EF}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "6_tests", "6_tests", "{6F10A985-4C52-4C50-9FEC-10F2AE6646EF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,4 +1,4 @@
-namespace YourPTWebAPI
+namespace YourPTWebAPI.Core
 {
     public class WeatherForecast
     {

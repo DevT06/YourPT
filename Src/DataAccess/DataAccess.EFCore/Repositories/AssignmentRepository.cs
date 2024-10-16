@@ -85,7 +85,7 @@ public class AssignmentRepository : IAssignmentRepository
 		//replaces exists method
 		if (existingAssignment == null) return;
 
-		//Todo also remove the attached AssignmentReflections
+		//Todo also remove the attached AssignmentReflections | not necessary anymore due to constraints may change
 
 		_context.Assignments.Remove(await existingAssignment);
 		await _context.SaveChangesAsync();

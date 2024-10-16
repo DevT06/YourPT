@@ -20,6 +20,7 @@ public class AssignmentReflectionConfiguration : IEntityTypeConfiguration<Assign
 		builder.Property(a => a.UpdatedAt).HasColumnName("UpdatedAt").IsRequired(false);
 
 		builder.HasOne(a => a.User).WithMany(u => u.AssignmentReflections).HasForeignKey(a => a.UserId).IsRequired(false);
-		builder.HasOne(a => a.Assignment).WithOne(a => a.Reflection).HasForeignKey<AssignmentReflection>(r => r.AssignmentId).IsRequired(false);
+
+		builder.HasOne(a => a.Assignment).WithMany(a => a.Reflections).HasForeignKey(r => r.AssignmentId).OnDelete(DeleteBehavior.Cascade).IsRequired();
 	}
 }

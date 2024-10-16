@@ -16,13 +16,18 @@ public class Assignment
 
 	public bool Complete { get; set; }
 
-	public AssignmentReflection? Reflection { get; set; }  // maybe change to multiple
+	public List<AssignmentReflection> Reflections { get; set; }  // maybe change to multiple
 
 	public Goal Goal { get; set; }
 	//FK
-	public int? GoalId { get; set; }
+	public int GoalId { get; set; }
 
 	public User User { get; set; }
 	//FK
 	public int? UserId {get; set; }
+
+	public Assignment()
+	{
+		Reflections = new List<AssignmentReflection>();
+	}
 }

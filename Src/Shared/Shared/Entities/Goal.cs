@@ -24,7 +24,7 @@ public class Goal
 
 	#endregion
 
-	public GoalReflection? Reflection { get; set; } 
+	public List<GoalReflection> Reflections { get; set; } 
 
 	// change later to reflection and combine commissionReflection | maybe later change to multiple
 
@@ -42,5 +42,6 @@ public class Goal
 	public Goal()
 	{
 		Assignments = new List<Assignment>();
+		Reflections = new List<GoalReflection>();
 	}
 }

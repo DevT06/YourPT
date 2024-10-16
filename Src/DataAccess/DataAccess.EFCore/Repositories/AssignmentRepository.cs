@@ -37,9 +37,9 @@ public class AssignmentRepository : IAssignmentRepository
 	public async Task<Assignment> AddAsync(Assignment assignment)
 	{
 		//?
-		if (assignment.Reflection != null)
+		if (assignment.Reflections != null)
 		{
-			_context.AssignmentReflections.Attach(assignment.Reflection);
+			_context.AssignmentReflections.AttachRange(assignment.Reflections);
 		}
 
 		_context.Goals.Attach(assignment.Goal);
@@ -54,10 +54,12 @@ public class AssignmentRepository : IAssignmentRepository
 	{
 		// not necessary because cannot be changed? remove later
 		// Check if the Assignment entity is already tracked by the context
-		if (_context.AssignmentReflections.Local.All(a => a.Id != assignment.Reflection.Id))
-		{
-			_context.AssignmentReflections.Attach(assignment.Reflection);
-		}
+		//if (_context.AssignmentReflections.Local.All(a => a.Id != assignment.Reflections.Id))
+		//{
+		//	_context.AssignmentReflections.AttachRange(assignment.Reflections);
+		//}
+
+		_context.AssignmentReflections.AttachRange(assignment.Reflections);
 
 		// Check if the User entity is already tracked by the context
 		if (_context.Users.Local.All(u => u.Id != assignment.User.Id))

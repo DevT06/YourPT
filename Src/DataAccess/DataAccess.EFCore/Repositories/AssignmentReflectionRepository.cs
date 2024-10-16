@@ -16,6 +16,8 @@ public class AssignmentReflectionRepository : IAssignmentReflectionRepository
 	public async Task<AssignmentReflection?> GetByIdAsync(int id)
 	{
 		return await _context.AssignmentReflections
+			//.Include(a => a.Assignment)
+			//.FirstOrDefaultAsync(a => a.Id == id)
 			.FindAsync(id);
 	}
 

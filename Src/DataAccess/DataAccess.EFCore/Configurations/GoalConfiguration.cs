@@ -21,8 +21,8 @@ public class GoalConfiguration : IEntityTypeConfiguration<Goal>
 		builder.Property(g => g.UpdatedAt).HasColumnName("UpdatedAt").IsRequired(false);
 
 		builder.HasOne(g => g.User).WithMany(u => u.Goals).HasForeignKey(g => g.UserId).IsRequired(false);
-		builder.HasOne(g => g.Reflection).WithOne(g => g.Goal).HasForeignKey<GoalReflection>(r => r.GoalId).IsRequired(false);
 
-		builder.HasMany(g => g.Assignments).WithOne(a => a.Goal).IsRequired(false);
+		builder.HasMany(g => g.Reflections).WithOne(g => g.Goal).HasForeignKey(r => r.GoalId).OnDelete(DeleteBehavior.Cascade).IsRequired();
+		builder.HasMany(g => g.Assignments).WithOne(a => a.Goal).OnDelete(DeleteBehavior.Cascade).IsRequired(false);
 	}
 }

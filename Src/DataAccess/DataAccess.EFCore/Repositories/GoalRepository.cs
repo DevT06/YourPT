@@ -43,7 +43,7 @@ public class GoalRepository : IGoalRepository
 			_context.Assignments.AttachRange(goal.Assignments);
 		}
 
-		_context.GoalReflections.Attach(goal.Reflection);
+		_context.GoalReflections.AttachRange(goal.Reflections);
 		_context.Goals.Add(goal);
 		await _context.SaveChangesAsync();
 		return goal;
@@ -53,11 +53,12 @@ public class GoalRepository : IGoalRepository
 	{
 		// not necessary because cannot be changed? remove later
 		// Check if the Assignment entity is already tracked by the context
-		if (_context.GoalReflections.Local.All(a => a.Id != goal.Reflection.Id))
-		{
-			_context.GoalReflections.Attach(goal.Reflection);
-		}
+		//if (_context.GoalReflections.Local.All(a => a.Id != goal.Reflections.Id))
+		//{
+		//	_context.GoalReflections.AttachRange(goal.Reflections);
+		//}
 
+		_context.GoalReflections.AttachRange(goal.Reflections);
 		// Check if the User entity is already tracked by the context
 		if (_context.Users.Local.All(u => u.Id != goal.User.Id))
 		{
@@ -70,7 +71,8 @@ public class GoalRepository : IGoalRepository
 		//}
 
 
-		//Todo improve efficiency down below at the AttachRange
+		// Todo improve efficiency down below at the AttachRange
+		// maybe not necessary
 		_context.Assignments.AttachRange(goal.Assignments);
 
 		_context.Goals.Update(goal);
@@ -87,6 +89,7 @@ public class GoalRepository : IGoalRepository
 		if (existingGoal == null) return;
 
 		//Todo also remove the attached Assignments and the belonging AssignmentReflections
+		//_context.Assignments.RemoveRange(existingGoal.Result.Assignments);
 
 		_context.Goals.Remove(await existingGoal);
 		await _context.SaveChangesAsync();

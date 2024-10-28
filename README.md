@@ -17,6 +17,8 @@ To be continued...
 - [Microsoft SQL Server](https://learn.microsoft.com/en-us/sql/?view=sql-server-ver16) <br>
 To be continued...
 
+### .NET Version: 8
+
 <!-- ### Database 
 - [Microsoft SQL Server](https://learn.microsoft.com/en-us/sql/?view=sql-server-ver16) -->
 

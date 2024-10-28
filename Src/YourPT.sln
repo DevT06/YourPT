@@ -3,17 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35303.130
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YourPTWebAPI.Core", "WebAPIs\YourPTWebAPI\YourPTWebAPI.Core.csproj", "{E45EA65F-AC3A-4150-A33B-48644485C11A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YourPT.WebAPI.Core", "WebAPIs\YourPT.WebAPI.Core\YourPT.WebAPI.Core.csproj", "{E45EA65F-AC3A-4150-A33B-48644485C11A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccess.EFCore", "DataAccess\DataAccess.EFCore\DataAccess.EFCore.csproj", "{33602706-007F-4C1D-94D2-700D71CAB8EC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YourPT.DataAccess.EFCore", "DataAccess\YourPT.DataAccess.EFCore\YourPT.DataAccess.EFCore.csproj", "{33602706-007F-4C1D-94D2-700D71CAB8EC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shared", "Shared\Shared\Shared.csproj", "{48FA1A2E-E45B-489E-BC16-B4FD355B59C8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YourPT.Shared", "Shared\YourPT.Shared\YourPT.Shared.csproj", "{48FA1A2E-E45B-489E-BC16-B4FD355B59C8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shared.Community", "Shared\Shared.Community\Shared.Community.csproj", "{2D006C37-0036-4BFE-81FA-267508A8153E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YourPT.Shared.Community", "Shared\YourPT.Shared.Community\YourPT.Shared.Community.csproj", "{2D006C37-0036-4BFE-81FA-267508A8153E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YourPTWebClient", "WebClient\YourPTWebClient\YourPTWebClient.csproj", "{76D65C7C-58CB-4907-A77C-46FA9AFDF174}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YourPT.WebClient", "WebClient\YourPT.WebClient\YourPT.WebClient.csproj", "{76D65C7C-58CB-4907-A77C-46FA9AFDF174}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YourPTWebClient.Client", "WebClient\YourPTWebClient.Client\YourPTWebClient.Client.csproj", "{D74F0DEA-BC65-450D-AEC7-4FB8A051EA00}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YourPT.WebClient.Client", "WebClient\YourPT.WebClient.Client\YourPT.WebClient.Client.csproj", "{D74F0DEA-BC65-450D-AEC7-4FB8A051EA00}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4_applicationWebAPIs", "4_applicationWebAPIs", "{F6E63C9F-D1A5-4FBF-B1DF-90D8946C9C80}"
 EndProject
@@ -21,13 +21,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0_dataAccess", "0_dataAcces
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1_shared", "1_shared", "{96A4493F-4D44-4141-B049-B5E5CDA2C1E2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shared.Interfaces", "Shared\Shared.Interfaces\Shared.Interfaces.csproj", "{E2956975-E9C2-45D1-9A19-234F5819B70C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YourPT.Shared.Interfaces", "Shared\YourPT.Shared.Interfaces\YourPT.Shared.Interfaces.csproj", "{E2956975-E9C2-45D1-9A19-234F5819B70C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2_interfaces", "2_interfaces", "{43758C10-B669-477B-A725-1D8652D6C5E6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3_logic", "3_logic", "{887F996E-EA34-4B72-B24C-1C9407167F7C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Logic.Core", "Logic\Logic.Core\Logic.Core.csproj", "{789B8FA7-278E-41CE-A9A7-F089D1067AA1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YourPT.Logic.Core", "Logic\YourPT.Logic.Core\YourPT.Logic.Core.csproj", "{789B8FA7-278E-41CE-A9A7-F089D1067AA1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5_applicationClient", "5_applicationClient", "{1B01B665-72FB-4923-BE08-E944E60B9DAC}"
 EndProject

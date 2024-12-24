@@ -28,6 +28,7 @@ To be determined...
 ## Info
 ### Development State
 YourPT is currently in a very early developmental state. <br>
+Development is currently on hold until further notice.
 
 
 <br>
